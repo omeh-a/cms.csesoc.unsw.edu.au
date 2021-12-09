@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Editor, EditorState, RichUtils } from "draft-js";
+import { EditorState, RichUtils } from "draft-js";
+import { Editor } from "react-draft-wysiwyg"; 
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 const EditorTitle = styled.div`
   font-size: xx-large;
@@ -82,8 +84,7 @@ const EditorFile: React.FC<EditorProps> = ({ editorState, setEditorState }) => {
       <EditorContent>
         <Editor
           editorState={editorState}
-          handleKeyCommand={handleKeyCommand}
-          onChange={setEditorState} />
+          onEditorStateChange={setEditorState} />
       </EditorContent>
     </Container>
   );

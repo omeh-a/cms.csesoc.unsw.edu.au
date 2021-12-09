@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+
 import EditorHeader from 'src/components/Editor/EditorHeader';
 import EditorFile from 'src/components/Editor/EditorFile';
 import EditorSidebar from 'src/components/Editor/EditorSidebar';
@@ -21,9 +22,9 @@ const Editor: React.FC = () => {
     <div style={{ height: '100%' }}>
       <EditorHeader />
       <div className="Editor" style={{ display: 'flex' }}>
-        <EditorSidebar
+        {/* <EditorSidebar
           editorState={editorState}
-          setEditorState={setEditorState} />
+          setEditorState={setEditorState} /> */}
         <div style={{ flex: 1 }}>
           <Container>
             <EditorFile
