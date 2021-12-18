@@ -1,7 +1,0 @@
-documents:
-  - name: id
-    type: INTEGER
-  - name: name
-    type: VARCHAR
-
-

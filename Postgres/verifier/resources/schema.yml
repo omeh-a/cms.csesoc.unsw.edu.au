@@ -1,0 +1,5 @@
+filesystem:
+  - name: children
+    type: hstore
+  - name: entityid
+    type: int4

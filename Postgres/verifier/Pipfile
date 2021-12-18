@@ -5,6 +5,9 @@ name = "pypi"
 
 [packages]
 psycopg = "*"
+pq = "*"
+psycopg-binary = "*"
+pyyaml = "*"
 
 [dev-packages]
 pytest = "*"
