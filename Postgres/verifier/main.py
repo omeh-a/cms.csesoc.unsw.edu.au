@@ -7,4 +7,8 @@ DB = os.environ["POSTGRES_DB"]
 
 with psycopg.connect(f"dbname={DB} user={USERNAME} password={PASSWORD}") as conn:
     with conn.cursor() as cur:
-        pass
+        cur.execute(f"""
+        SELECT *
+        FROM information_schema.columns
+        WHERE table_name = filesystem
+        """)
