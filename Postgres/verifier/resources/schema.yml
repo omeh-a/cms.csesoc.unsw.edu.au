@@ -3,3 +3,13 @@ filesystem:
     type: hstore
   - name: entityid
     type: int4
+groups:
+  - name: uid
+    type: int4
+  - name: name
+    type: varchar
+  - name: permission
+    type: permissions_enum
+cheese_burgers:
+  - name: patty
+    type: beef
