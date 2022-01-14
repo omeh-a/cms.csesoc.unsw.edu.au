@@ -8,6 +8,7 @@ psycopg = "*"
 pq = "*"
 psycopg-binary = "*"
 pyyaml = "*"
+colorama = "*"
 
 [dev-packages]
 pytest = "*"

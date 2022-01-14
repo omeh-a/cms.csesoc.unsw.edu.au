@@ -1,6 +1,10 @@
+from typing import DefaultDict
 import psycopg
 import sys
 import yaml
+
+from colorama import init, Back, Fore, Style
+init()
 
 # TODO: use Docker instead
 USERNAME = "postgres"
@@ -57,7 +61,7 @@ with open(filename) as FILE:
 
     passed = 0
     total = 0
-    errors = []
+    errors = DefaultDict(list)
 
     for table in contents.keys():
         print(f"Scanning through table '{table}': ", end="")
@@ -71,15 +75,19 @@ with open(filename) as FILE:
                 check_column(column, records, table)
                 passed += 1
 
-                print(".", end="")
+                print(f"{Fore.GREEN}.{Style.RESET_ALL}", end="")
             except (TypeError, NameError) as e:
-                print("X")
-                errors.append(e)
+                print(f"{Fore.RED}X{Style.RESET_ALL}", end="")
+                errors[table].append(e)
 
         print("")
 
-    for error in errors:
-        print(error)
+    for table, values in errors.items():
+        print("")
+        print(f"All errors for table '{table}':")
+
+        for error in values:
+            print(error)
 
     print("")
 
