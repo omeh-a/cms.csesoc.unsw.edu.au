@@ -87,7 +87,7 @@ with open(filename) as FILE:
         print(f"All errors for table '{table}':")
 
         for error in values:
-            print(error)
+            print(f"{Fore.RED}{error}{Style.RESET_ALL}")
 
     print("")
 
